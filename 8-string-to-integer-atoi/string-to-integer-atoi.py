@@ -1,31 +1,29 @@
 # subhankar
 class Solution:
     def myAtoi(self, s: str) -> int:
-        sign = 1 
-        ans = 0
-        i,n = 0,len(s)
-        maxi,mini = 2**31 - 1, -2**31
-        while i < n and s[i] == ' ':
-            i += 1
-        if i == n:
+        s = s.lstrip() # removing leading white spaces
+        if not s:
             return 0
-
-        if s[i] == '-':
+        sign = 1
+        maxi,mini = 2**31 - 1, -2**31
+        if s[0] == '-':
             sign = -1
-            i += 1
-        elif s[i] == '+':
-            i += 1        
+            s = s[1:]
+        elif s[0] == '+':
+            s = s[1:]
 
-        while i < n:
-            char = s[i]
-            if ((char == ' ') or (not (char >= '0' and char <= '9'))):
-                break
-            ans = ans*10 + int(char)
-            if sign == 1 and sign*ans > maxi:
+        def conversion(num,index):
+            if index == len(s) or not s[index].isdigit():
+                return sign*num
+
+            value = int(s[index])
+            num = num*10 + value
+
+            if sign == 1 and sign*num > maxi:
                 return maxi
-            if sign == -1 and sign*ans < mini:
+            if sign == -1 and sign*num < mini:
                 return mini
-            i += 1
-
-        return sign*ans
             
+            return conversion(num,index+1)
+        
+        return conversion(0,0)
