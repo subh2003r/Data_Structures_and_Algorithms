@@ -1,3 +1,14 @@
+# Subhankar Sah
+# invalid parenthesis check
+'''
+open -> (
+close -> )
+
+(())) -> open < n -> invalid
+((()) -> open > n -> invalid
+)))() -> close > open -> invalid
+
+'''
 class Solution:
     def __init__(self):
         self.store = []
