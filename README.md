@@ -6,16 +6,19 @@ Welcome to my DSA repository! This repository contains well-structured solutions
 A structured path to mastering Data Structures and Algorithms for coding interviews and competitive programming.
 
 1️⃣ Beginner Level
+
 ✅ Arrays & Strings
 ✅ Recursion & Backtracking
 ✅ Hashing & HashMaps
 
 2️⃣ Intermediate Level
+
 ✅ Linked Lists & Stacks/Queues
 ✅ Sorting & Searching Algorithms
 ✅ Binary Trees & Binary Search Trees
 
 3️⃣ Advanced Level
+
 ✅ Graphs & BFS/DFS
 ✅ Dynamic Programming (DP)
 ✅ Greedy Algorithms
