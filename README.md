@@ -6,11 +6,11 @@ Welcome to my DSA repository! This repository contains well-structured, optimize
 
 
 
-### 📌 **Roadmap for DSA Mastery** 🚀
+### 📌 **Roadmap for DSA Mastery** 
 
 A structured path to mastering Data Structures & Algorithms effectively.
 
-### 🟢 1️⃣ **Beginner Level**
+### 1️⃣ **Beginner Level**
 
 ✅ Arrays & Strings
 
@@ -18,7 +18,7 @@ A structured path to mastering Data Structures & Algorithms effectively.
 
 ✅ Hashing & HashMaps
 
-### 🔵 2️⃣ **Intermediate Level**
+### 2️⃣ **Intermediate Level**
 
 ✅ Linked Lists & Stacks/Queues
 
@@ -26,7 +26,7 @@ A structured path to mastering Data Structures & Algorithms effectively.
 
 ✅ Binary Trees & Binary Search Trees
 
-### 🔴 3️⃣ **Advanced Level**
+### 3️⃣ **Advanced Level**
 
 ✅ Graphs & BFS/DFS
 
