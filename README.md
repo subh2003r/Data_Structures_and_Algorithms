@@ -12,29 +12,29 @@ A structured path to mastering Data Structures & Algorithms effectively.
 
 ### 1️⃣ **Beginner Level**
 
-** Arrays & Strings
+****** Arrays & Strings
 
-** Recursion & Backtracking
+****** Recursion & Backtracking
 
-** Hashing & HashMaps
+****** Hashing & HashMaps
 
 ### 2️⃣ **Intermediate Level**
 
-** Linked Lists & Stacks/Queues
+****** Linked Lists & Stacks/Queues
 
-** Sorting & Searching Algorithms
+****** Sorting & Searching Algorithms
 
-** Binary Trees & Binary Search Trees
+****** Binary Trees & Binary Search Trees
 
 ### 3️⃣ **Advanced Level**
 
-** Graphs & BFS/DFS
+****** Graphs & BFS/DFS
 
-** Dynamic Programming (DP)
+****** Dynamic Programming (DP)
 
-** Greedy Algorithms
+****** Greedy Algorithms
 
-** Advanced Graphs (Dijkstra, Floyd-Warshall)
+****** Advanced Graphs (Dijkstra, Floyd-Warshall)
 
 
 
