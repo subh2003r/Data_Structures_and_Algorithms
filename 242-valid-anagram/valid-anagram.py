@@ -1,5 +1,6 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        # time complexity -> O(n) and space complexity -> O(26) atmost 26 alphabets -> O(1)
         def check():
             store_cnt = {}
             for char in s:
