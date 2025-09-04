@@ -11,7 +11,9 @@ class Solution:
                     store_cnt[char] -= 1
                 else:
                     return False
+            
+            return True
 
-            return True if sum(store_cnt.values()) == 0 else False
+           # return True if sum(store_cnt.values()) == 0 else False
 
         return len(s) == len(t) and check()
