@@ -1,21 +1,30 @@
+import math
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        m, n = len(nums1), len(nums2)
-        total = m + n
-        mid = total // 2
-        i = j = 0
-        curr = prev = 0
+        # start iteration from the smaller length array
+        n, m = len(nums1), len(nums2)
+        if n > m:
+            return self.findMedianSortedArrays(nums2, nums1)
 
-        for k in range(mid + 1):
-            prev = curr
-            if i < m and (j >= n or nums1[i] < nums2[j]):
-                curr = nums1[i]
-                i += 1
+        low, high = 0, n
+        total = n+m 
+        left = math.ceil(total/2)
+
+        while low <= high:
+            mid = (low + high)//2
+            l1 = nums1[mid-1] if mid-1 >= 0 else float("-inf")
+            l2 = nums2[left-mid-1] if left-mid-1 >= 0 else float("-inf")
+            r1 = nums1[mid] if mid < n else float("inf")
+            r2 = nums2[left-mid] if left-mid < m else float("inf")
+
+            if l1 <= r2 and l2 <= r1:
+                if total%2:
+                    return max(l1,l2)
+                else:
+                    return (max(l1,l2) + min(r1,r2))/2
+            elif l1 > r2:
+                high = mid-1
             else:
-                curr = nums2[j]
-                j += 1
-
-        if total % 2 == 0:
-            return (prev + curr) / 2
-        else:
-            return curr
+                low = mid+1
+        
+        return -1
