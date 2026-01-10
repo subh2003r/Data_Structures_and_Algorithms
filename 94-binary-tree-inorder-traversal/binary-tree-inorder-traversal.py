@@ -9,6 +9,27 @@ class Solution:
         self.result = []
 
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        # iterative approach
+        if root is None:
+            return []
+
+        stack = []
+        curr = root
+
+        while curr or stack:
+            # Go as left as possible
+            while curr:
+                stack.append(curr)
+                curr = curr.left
+            
+            top = stack.pop()
+            self.result.append(top.val)
+
+            curr = top.right
+        
+        return self.result
+
+        """
         # recursive approach 
         if root is None:
             return []
@@ -18,3 +39,4 @@ class Solution:
         self.inorderTraversal(root.right)
 
         return self.result
+        """
