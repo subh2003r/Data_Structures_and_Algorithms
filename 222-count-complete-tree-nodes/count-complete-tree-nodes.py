@@ -25,6 +25,11 @@ class Solution:
     def countNodes(self, root: Optional[TreeNode]) -> int:
         """
         find the extensive left and right height of the sub-trees, if both are equal then the subtree is complete binary tree else recursively go to each level and calculate the count of trees
+        Recursive calls happen at less than/ approx O(logn)
+        Whenever a subtree is perfect, we stop immediately there (no deeper recursion).
+        Height calculation = O(logn) for left and right subtrees 
+
+        Overall time complexity: O(logn*logn) = O(log2n)
         """
 
         if not root:
