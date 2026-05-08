@@ -150,6 +150,48 @@ class Solution:
 
         return components
 
+    def union_find(self, n, connections):
+        parent = [i for i in range(n)]
+        rank = [0]*n
+
+        """ 
+        Find operation + path compression 
+        Time complexity for find operation :- O(alpha(n)) -- inverse ackerman function -- grows very slowly -- almost constant 
+        """
+        def find(u):
+            if parent[u] != u:
+                parent[u] = find(parent[u])
+            
+            return parent[u]
+        
+        def union(u, v):
+            pu = find(u)
+            pv = find(v)
+
+            if pu == pv:
+                return 0
+            
+            rank_pu, rank_pv = rank[pu], rank[pv]
+            if rank_pu > rank_pv:
+                parent[pv] = pu
+            elif rank_pu < rank_pv:
+                parent[pu] = pv
+            else:
+                parent[pv] = pu
+                rank[pu] += rank[pv]
+
+            return 1
+
+        components = n
+
+        for u,v in connections:
+            # if both the edges are not connected -- although they should be connected, hence components gets reduced by 1
+            if find(u) != find(v):
+                components -= union(u, v)
+
+        return components - 1
+
+
     def makeConnected(self, n: int, connections: List[List[int]]) -> int:
         if len(connections) < n-1:
             return -1
@@ -161,7 +203,14 @@ class Solution:
             graph[u].append(v)
             graph[v].append(u)
 
+        """
+        # using dfs approach (O(V+E))
         return self.component_find(n, visited, graph) - 1
+        """
         
+        # using union-find algo to find number of components 
+        # Time complexity:- O(E*alpha(n)) ~ O(E)
+        return self.union_find(n, connections)
+
 
         
