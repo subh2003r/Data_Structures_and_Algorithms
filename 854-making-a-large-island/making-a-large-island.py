@@ -24,6 +24,7 @@ class DisjointSet:
             self.size[pv] += self.size[pu]
 
 class Solution:
+    # Total Time complexity: O(n2×4×α(n2))
     def largestIsland(self, grid: List[List[int]]) -> int:
         n, m = len(grid), len(grid[0])
         ds = DisjointSet(n*m)
