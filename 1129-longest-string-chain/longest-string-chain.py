@@ -1,5 +1,9 @@
 class Solution:
     def longestStrChain(self, words: List[str]) -> int:
+        """
+        Time complexity: O(n2 * L) -- as unique states is n^2 
+        One observation -- initally i used memoization using dp = {}, but that caused memory limit exceeded because a dictionary has a lot of overhead associated ranging from storing the tuple(idx, prev), hash, integer object .. which causes the memory to shoot up .. but if we use normal 2D array for two states , then the memory consumption will be less hence preventing Memory Limit exceed (MLE)
+        """
         n = len(words)
         # sort the words based on the length
         words.sort(key=len)
