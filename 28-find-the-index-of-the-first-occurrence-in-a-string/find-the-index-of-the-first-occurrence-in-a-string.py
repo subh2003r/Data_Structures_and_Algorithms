@@ -1,6 +1,8 @@
 class Solution:
     def bruteForce(self, haystack, needle):
         # find all occurences of needle first character in haystack 
+        # Worst case: O(n*m) time complexity
+
         occur = []
         n, m = len(haystack), len(needle)
         for i in range(n):
@@ -24,4 +26,10 @@ class Solution:
         return -1
 
     def strStr(self, haystack, needle):
-        return self.bruteForce(haystack, needle)
+        # return self.bruteForce(haystack, needle)
+        n, m = len(haystack), len(needle)
+        for i in range(n+m-1):
+            if haystack[i:i+m] == needle:
+                return i
+
+        return -1
