@@ -22,6 +22,9 @@ class Solution:
 
         '''
 
+        """
+        # optimal approach -- one way
+
         col0 = 1 # to keep track of col0 as it was overallaped i.e handling edge cases
 
         for i in range(m):
@@ -48,3 +51,39 @@ class Solution:
         if col0 == 0:
             for i in range(0,m):
                 matrix[i][0] = 0
+        """
+
+        # Another way of optimal approach -- self explanatory 
+        isRow0, isCol0 = False, False
+        n, m = len(matrix), len(matrix[0])
+
+        # Done to handle edge conditions
+        for row in range(n):
+            if matrix[row][0] == 0:
+                isRow0 = True
+                break
+        
+        for col in range(m):
+            if matrix[0][col] == 0:
+                isCol0 = True
+            
+        for row in range(1, n):
+            for col in range(1, m):
+                if matrix[row][col] == 0:
+                    matrix[0][col] = 0
+                    matrix[row][0] = 0
+        
+        # set 0's wherever the marker is set
+        for row in range(1, n):
+            for col in range(1, m):
+                if matrix[row][0] == 0 or matrix[0][col] == 0:
+                    matrix[row][col] = 0
+        
+        if isRow0:
+            for row in range(n):
+                matrix[row][0] = 0
+
+        if isCol0:
+            for col in range(m):
+                matrix[0][col] = 0
+                
